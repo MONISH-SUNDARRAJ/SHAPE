@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Shape Formulas</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #e3f2fd; /* Light blue background */
+      margin: 0;
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #0d47a1;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 25px;
+      flex: 1 1 calc(33.333% - 30px);
+      box-sizing: border-box;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s;
+      min-width: 300px;
+      color: white;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      margin-bottom: 12px;
+    }
+
+    .card img {
+      width: 180px;
+      height: auto;
+      margin-bottom: 12px;
+    }
+
+    .formula {
+      font-size: 17px;
+      margin: 6px 0;
+      display: none;
+    }
+
+    .card.active .formula {
+      display: block;
+    }
+
+    /* Individual card colors */
+    .cube       { background-color: #f44336; } /* Red */
+    .cuboid     { background-color: #2196f3; } /* Blue */
+    .cylinder   { background-color: #4caf50; } /* Green */
+    .cone       { background-color: #ff9800; } /* Orange */
+    .sphere     { background-color: #9c27b0; } /* Purple */
+    .hemisphere { background-color: #3f51b5; } /* Indigo */
+
+    @media screen and (max-width: 950px) {
+      .card {
+        flex: 1 1 calc(50% - 30px);
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>3D Shapes: Surface Area and Volume</h1>
+  <div class="container">
+    <div class="card cube" onclick="toggleFormula(this)">
+      <h2>Cube</h2>
+      <img src="R.png" alt="Cube">
+      <div class="formula">Surface Area = 6 × a²</div>
+      <div class="formula">Volume = a³</div>
+    </div>
+
+    <div class="card cuboid" onclick="toggleFormula(this)">
+      <h2>Cuboid</h2>
+      <img src="OIP.jpeg" alt="Cuboid">
+      <div class="formula">Surface Area = 2(lw + lh + wh)</div>
+      <div class="formula">Volume = l × w × h</div>
+    </div>
+
+    <div class="card cylinder" onclick="toggleFormula(this)">
+      <h2>Cylinder</h2>
+      <img src="cylinder.png" alt="Cylinder">
+      <div class="formula">Surface Area = 2πr(h + r)</div>
+      <div class="formula">Volume = πr²h</div>
+    </div>
+
+    <div class="card cone" onclick="toggleFormula(this)">
+      <h2>Cone</h2>
+      <img src="Cone-PNG-Photo.png" alt="Cone">
+      <div class="formula">Surface Area = πr(l + r)</div>
+      <div class="formula">Volume = (1/3)πr²h</div>
+    </div>
+
+    <div class="card sphere" onclick="toggleFormula(this)">
+      <h2>Sphere</h2>
+      <img src="sphereSVG2.png" alt="Sphere">
+      <div class="formula">Surface Area = 4πr²</div>
+      <div class="formula">Volume = (4/3)πr³</div>
+    </div>
+
+    <div class="card hemisphere" onclick="toggleFormula(this)">
+      <h2>Hemisphere</h2>
+      <img src="cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTEwL3JtNTg0LWVsZW1lbnQtMDExYS0yXzEucG5n.webp" alt="Hemisphere">
+      <div class="formula">Surface Area = 3πr²</div>
+      <div class="formula">Volume = (2/3)πr³</div>
+    </div>
+  </div>
+
+  <script>
+    function toggleFormula(card) {
+      card.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
